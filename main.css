@@ -1,0 +1,55 @@
+body {
+  contain: layout inline-size;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.container {
+  height: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-rows: 40px 1fr 40px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+        "a a a"
+        "b c c"
+        "b c c";
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.one {
+	grid-area: a;
+  background-color: red;
+}
+
+.two {
+	grid-area: b;
+  background-color: blue;
+}
+
+.three {
+	grid-area: c;
+  background-color: green;
+}
+
+.kirby {
+  background-color: pink;
+  display: flex;
+  height: 100%;
+}
+
+@container (min-width: 500px) {
+  .kirby {
+    background: wheat;
+  }
+}
+
+@container (max-width: 500px) {
+  .kirby {
+    border: 5px solid red;
+  }
+}
