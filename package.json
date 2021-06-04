@@ -1,0 +1,12 @@
+{
+  "name": "container-queries-playground",
+  "version": "1.0.0",
+  "description": "Playing with CSS container queries and Draggable",
+  "main": "index.js",
+  "repository": "git@github.com:vincentnavetat/container-queries-playground.git",
+  "author": "Vincent Navetat <vincent.navetat@carwow.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "@shopify/draggable": "^1.0.0-beta.8"
+  }
+}
