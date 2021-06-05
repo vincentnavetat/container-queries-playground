@@ -1,17 +1,18 @@
 body {
-  contain: layout inline-size;
   margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   flex: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-  height: 100%;
-  flex: 1;
+  height: 500px;
+  width: 500px;
   display: grid;
-  grid-template-rows: 40px 1fr 40px;
+  grid-template-rows: 20% 1fr 10%;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
         "a a a"
@@ -21,35 +22,39 @@ body {
   padding: 10px;
 }
 
+.wrapper {
+  contain: layout inline-size;
+  border: 1px solid grey;
+}
+
 .one {
 	grid-area: a;
-  background-color: red;
 }
 
 .two {
 	grid-area: b;
-  background-color: blue;
 }
 
 .three {
 	grid-area: c;
-  background-color: green;
 }
 
 .kirby {
-  background-color: pink;
+  background-color: #d74894;
   display: flex;
   height: 100%;
+  background-repeat: no-repeat;
+  background-image: url('./img/mario.png');
 }
 
-@container (min-width: 500px) {
+@container (min-width: 450px) {
   .kirby {
-    background: wheat;
+    background-image: url('./img/link.png');
   }
 }
 
-@container (max-width: 500px) {
+@container (max-width: 160px) {
   .kirby {
-    border: 5px solid red;
+    background-image: url('./img/pikachu.png');
   }
 }
