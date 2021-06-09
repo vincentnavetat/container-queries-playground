@@ -23,20 +23,23 @@ body {
 }
 
 .wrapper {
-  contain: layout inline-size;
   border: 1px solid grey;
 }
 
 .one {
-	grid-area: a;
+  grid-area: a;
 }
 
 .two {
-	grid-area: b;
+  grid-area: b;
 }
 
 .three {
-	grid-area: c;
+  grid-area: c;
+}
+
+.kirby-wrap {
+  contain: layout inline-size;
 }
 
 .kirby {
@@ -45,6 +48,10 @@ body {
   height: 100%;
   background-repeat: no-repeat;
   background-image: url('./img/mario.png');
+}
+
+.draggable-mirror {
+  /* display: none; */
 }
 
 @container (min-width: 450px) {

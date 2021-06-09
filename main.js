@@ -7,7 +7,7 @@ export default () => {
   const containers = document.querySelectorAll('.container');
 
   new Droppable(containers, {
-    draggable: '.kirby',
+    draggable: '.kirby-wrap',
     dropzone: '.wrapper',
     mirror: {
       constrainDimensions: true,
