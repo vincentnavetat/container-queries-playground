@@ -38,30 +38,32 @@ body {
   grid-area: c;
 }
 
-.kirby-wrap {
+.kirby {
   contain: layout inline-size;
+  position: relative;
+  height: 100%;
 }
 
-.kirby {
+.kirby::before {
+  content: '';
+  position: absolute;
   background-color: #d74894;
+  background-size: contain;
   display: flex;
   height: 100%;
+  width: 100%;
   background-repeat: no-repeat;
   background-image: url('./img/mario.png');
 }
 
-.draggable-mirror {
-  /* display: none; */
-}
-
 @container (min-width: 450px) {
-  .kirby {
+  .kirby::before {
     background-image: url('./img/link.png');
   }
 }
 
 @container (max-width: 160px) {
-  .kirby {
+  .kirby::before {
     background-image: url('./img/pikachu.png');
   }
 }
