@@ -23,22 +23,21 @@ body {
 }
 
 .wrapper {
-  border: 1px solid grey;
   border-radius: 4px;
 }
 
 .a {
-  background-color: green;
+  background-color: #43B047;
   grid-area: a;
 }
 
 .b {
-  background-color: yellow;
+  background-color: #FBD000;
   grid-area: b;
 }
 
 .c {
-  background-color: red;
+  background-color: #E52521;
   grid-area: c;
 }
 
@@ -48,7 +47,7 @@ body {
 }
 
 .e {
-  background-color: blue;
+  background-color: #17569b;
   grid-area: e;
 }
 
@@ -63,8 +62,9 @@ body {
 
   &::before {
     content: '';
+    border-radius: 4px;
     position: absolute;
-    // background-color: #d74894;
+    background-color: #d74894;
     background-size: contain;
     background-position: center;
     display: flex;
@@ -75,26 +75,35 @@ body {
   }
 }
 
+.draggable-mirror {
+  opacity: .9;
+  z-index: 10000000000;
+}
+
 @container (max-width: 141px) {
   .kirby::before {
+    background-color: #FBD000;
     background-image: url('./img/pikachu.png');
   }
 }
 
 @container (min-width: 300px) and (max-width: 321px) {
   .kirby::before {
+    background-color: #43B047;
     background-image: url('./img/link.png');
   }
 }
 
 @container (min-width: 180px) and (max-width: 190px) {
   .kirby::before {
+    background-color: #17569b;
     background-image: url('./img/sonic.png');
   }
 }
 
 @container (min-width: 345px) {
   .kirby::before {
+    background-color: #E52521;
     background-image: url('./img/mario.png');
   }
 }
