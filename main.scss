@@ -13,7 +13,7 @@ body {
   width: 500px;
   display: grid;
   grid-template-rows: 25% 1fr 30%;
-  grid-template-columns: 28% 1fr 1fr;
+  grid-template-columns: 28% 1fr 37%;
   grid-template-areas:
         "a a e"
         "b d e"
@@ -24,25 +24,31 @@ body {
 
 .wrapper {
   border: 1px solid grey;
+  border-radius: 4px;
 }
 
 .a {
+  background-color: green;
   grid-area: a;
 }
 
 .b {
+  background-color: yellow;
   grid-area: b;
 }
 
 .c {
+  background-color: red;
   grid-area: c;
 }
 
 .d {
+  background-color: #d74894;
   grid-area: d;
 }
 
 .e {
+  background-color: blue;
   grid-area: e;
 }
 
@@ -58,25 +64,37 @@ body {
   &::before {
     content: '';
     position: absolute;
-    background-color: #d74894;
-    background-size: cover;
+    // background-color: #d74894;
+    background-size: contain;
     background-position: center;
     display: flex;
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
-    background-image: url('./img/mario.png');
+    background-image: url('./img/kirby.png');
   }
 }
 
-@container (min-width: 450px) {
+@container (max-width: 141px) {
+  .kirby::before {
+    background-image: url('./img/pikachu.png');
+  }
+}
+
+@container (min-width: 300px) and (max-width: 321px) {
   .kirby::before {
     background-image: url('./img/link.png');
   }
 }
 
-@container (max-width: 160px) {
+@container (min-width: 180px) and (max-width: 190px) {
   .kirby::before {
-    background-image: url('./img/pikachu.png');
+    background-image: url('./img/sonic.png');
+  }
+}
+
+@container (min-width: 345px) {
+  .kirby::before {
+    background-image: url('./img/mario.png');
   }
 }
