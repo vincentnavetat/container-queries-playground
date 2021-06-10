@@ -12,11 +12,11 @@ body {
   height: 500px;
   width: 500px;
   display: grid;
-  grid-template-rows: 20% 1fr 10%;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 25% 1fr 30%;
+  grid-template-columns: 28% 1fr 1fr;
   grid-template-areas:
-        "a a a"
-        "b c c"
+        "a a e"
+        "b d e"
         "b c c";
   grid-gap: 10px;
   padding: 10px;
@@ -26,34 +26,47 @@ body {
   border: 1px solid grey;
 }
 
-.one {
+.a {
   grid-area: a;
 }
 
-.two {
+.b {
   grid-area: b;
 }
 
-.three {
+.c {
   grid-area: c;
+}
+
+.d {
+  grid-area: d;
+}
+
+.e {
+  grid-area: e;
 }
 
 .kirby {
   contain: layout inline-size;
   position: relative;
   height: 100%;
-}
 
-.kirby::before {
-  content: '';
-  position: absolute;
-  background-color: #d74894;
-  background-size: contain;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-image: url('./img/mario.png');
+  &:hover {
+    cursor: grab;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: #d74894;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: url('./img/mario.png');
+  }
 }
 
 @container (min-width: 450px) {
