@@ -55,6 +55,7 @@ body {
   contain: layout inline-size;
   position: relative;
   height: 100%;
+  border-radius: 4px;
 
   &:hover {
     cursor: grab;
@@ -76,8 +77,12 @@ body {
 }
 
 .draggable-mirror {
-  opacity: .9;
+  // opacity: .7;
   z-index: 10000000000;
+
+  &::before {
+    transition: all .5s;
+  }
 }
 
 @container (max-width: 141px) {
